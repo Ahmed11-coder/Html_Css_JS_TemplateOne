@@ -1,0 +1,190 @@
+body {
+    font-family: Open Sans;
+}
+.container {
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+@media screen and (min-width: 576px) {
+  .container {
+    max-width: 540px;
+  }
+}
+/* Small Screen  */
+@media screen and (min-width: 768px) {
+    .container {
+        max-width: 750px;
+    }
+}
+/* Medium Screen  */
+@media screen and (min-width: 992px) {
+    .container {
+        max-width: 970px;
+    }
+}
+/* Large Screen  */
+@media screen and (min-width: 1200px) {
+    .container {
+        max-width: 1170px;
+    }
+}
+.container .imgs-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+.container .imgs-content .img-box {
+    width: calc((100% / 4) - 20px);
+    max-height: 207px;
+    border-radius: 6px;
+    margin-bottom: 20px;
+    position: relative;
+    opacity: 0.5;
+    transition: 0.2s;
+    cursor: pointer;
+}
+.container .imgs-content .img-box > img  {
+    border-radius: 6px;
+    width: 100%;
+    transition: 0.2s;
+}
+@media screen and (max-width: 768px) {
+    .container .imgs-content {
+    	justify-content: center;
+    }
+    .container .imgs-content .img-box {
+    	width: calc(100% - 50px);
+    }
+}
+.container .imgs-content .img-box .overlay-img {
+    position: absolute;
+    width: 50px;
+    left: 50%;
+    top: 50%;
+    padding: 3px;
+    opacity: 0;
+    transform: scale(1.2) translate(-50%, -50%);
+    background-color: #fff;
+    transition: 0.3s;
+}
+.container .imgs-content .img-box:hover .overlay-img {
+    opacity: 0.6;
+    z-index: 1;
+}
+.container .imgs-content .img-box:hover {
+    opacity: 1;
+}
+.container .imgs-content .img-box:hover img:nth-child(2) {
+    transform: scale(1.2);
+    box-shadow: 0px 0px 20px 2px #777;
+}
+.overlay {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #0004;
+}
+.popup-box {
+    width: 95%;
+    max-width: 900px;
+    padding: 12px;
+    z-index: 2;
+    background-color: #f7f7f7;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 8px;
+    box-sizing: border-box;
+}
+.popup-box .close-b {
+    width: 15px;
+    height: 15px;
+    background-color: #ddd;
+    border-radius: 50%;
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+    position: absolute;
+    right: -10px;
+    top: -10px;
+    font-weight: bold;
+    font-family: Arial;
+    transition: 0.2s;
+}
+.popup-box .close-b:hover {
+    background-color: #050505;
+    color: #e91e46;
+}
+.popup-box .info-box {
+    margin-top: 4px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.popup-box .info-box p {
+    width: calc((100% / 5) - 40px);
+    color: #545454;
+    margin: 7px 0;
+    text-align: center;
+    font-size: 12px;
+}
+@media screen and (max-width: 768px) {
+    .popup-box .info-box {
+    	justify-content: center;
+    }
+    .popup-box .info-box p {
+    	margin: 0px 10px;
+    	width: fit-content;
+    }
+}
+.popup-box img {
+    width: 100%;
+}
+.popup-box .popup-header {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+.popup-box .popup-header .download-box a {
+    background-color: #4caf50;
+    width: 120px;
+    text-decoration: none;
+    display: flex;
+    padding: 6px;
+    cursor: pointer;
+    justify-content: space-evenly;
+    align-items: center;
+    border-radius: 6px;
+    color: #fff;
+    text-align: center;
+    transition: 0.2s;
+    font-weight: bold;
+}
+.popup-box .popup-header .download-box a:hover {
+    background-color: #3a8a39;
+    color: #fff;
+    font-weight: bold;
+}
+.popup-box .popup-header .download-box a i {
+    font-weight: bold;
+    font-size: 20px;
+}
+.popup-box .popup-header #logo {
+    width: 140px;
+}
+@media screen and (max-width: 768px) {
+    .popup-box .popup-header #logo {
+	width: 25%;
+    }
+}
