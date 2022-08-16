@@ -33,9 +33,9 @@ html::-webkit-scrollbar-thumb:hover {
     padding-right: 15px;
 }
 @media screen and (min-width: 576px) {
-  .container {
-    max-width: 540px;
-  }
+    .container {
+        max-width: 540px;
+    }
 }
 /* Small Screen  */
 @media screen and (min-width: 768px) {
@@ -68,8 +68,10 @@ html::-webkit-scrollbar-thumb:hover {
     color: #767676;
     margin: 0;
 }
-h4,h3, .skill-name {
-  color: var(--title-color);
+h4,
+h3,
+.skill-name {
+    color: var(--title-color);
 }
 /* Start Setting Box */
 .settings-box {
@@ -182,28 +184,28 @@ h4,h3, .skill-name {
     margin-top: 5px;
 }
 .reset-options {
-  background-color: #f60000;
-  border: none;
-  box-shadow: 3px 3px 5px -2px #222;
-  position: absolute;
-  left: -53.8%;
-  bottom: 10px;
-  display: block;
-  color: #fff;
-  font-weight: bold;
-  padding: 5px;
-  border-radius: 0 4px 4px 0;
-  cursor: pointer;
-  transition: 0.3s;
+    background-color: #f60000;
+    border: none;
+    box-shadow: 3px 3px 5px -2px #222;
+    position: absolute;
+    left: -53.8%;
+    bottom: 10px;
+    display: block;
+    color: #fff;
+    font-weight: bold;
+    padding: 5px;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+    transition: 0.3s;
 }
 .reset-options:hover {
-  left: 0;
-  background-color: #e00101;
-  box-shadow: none;
+    left: 0;
+    background-color: #e00101;
+    box-shadow: none;
 }
 .reset-options i {
-  font-size: 20px;
-  font-weight: bold;
+    font-size: 20px;
+    font-weight: bold;
 }
 /* End Setting Box */
 /* Start Nav Bullets */
@@ -216,14 +218,14 @@ h4,h3, .skill-name {
     z-index: 99;
 }
 .nav-bullets .bullet {
-   width: 10px;
-   height: 10px;
-   cursor: pointer;
-   border: 2px solid #666;
-   margin: 15px auto;
-   position: relative;
-   border-radius: 50%;
-   transition: all 0.3s;
+    width: 10px;
+    height: 10px;
+    cursor: pointer;
+    border: 2px solid #666;
+    margin: 15px auto;
+    position: relative;
+    border-radius: 50%;
+    transition: all 0.3s;
 }
 .nav-bullets .bullet .tooltip {
     background-color: var(--main-color);
@@ -239,11 +241,11 @@ h4,h3, .skill-name {
     display: none;
 }
 .nav-bullets .bullet:hover {
-  border-color: var(--main-color);
-  background-color: #000;
+    border-color: var(--main-color);
+    background-color: #000;
 }
 .nav-bullets .bullet:hover .tooltip {
-  display: block;
+    display: block;
 }
 .nav-bullets .bullet .tooltip::before {
     content: "";
@@ -518,13 +520,21 @@ h4,h3, .skill-name {
     top: 2vh;
     left: 15vw;
     opacity: 0.36;
-    background-image: linear-gradient( 135deg, var(--second-color) 20%, var(--main-color) );
+    background-image: linear-gradient(
+        135deg,
+        var(--second-color) 20%,
+        var(--main-color)
+    );
     box-shadow: 5px 5px 30px var(--main-color);
 }
 .skills::after {
     bottom: 5vh;
     right: 10vw;
-    background-image: linear-gradient( 315deg, var(--second-color) 20%, var(--main-color) );
+    background-image: linear-gradient(
+        315deg,
+        var(--second-color) 20%,
+        var(--main-color)
+    );
     box-shadow: -5px -5px 30px var(--main-color);
 }
 .skills .section-title h2 {
@@ -929,7 +939,7 @@ h4,h3, .skill-name {
     transition: 0.2s;
 }
 .features .feat-box:hover h4::before {
-  background-color: var(--main-color);
+    background-color: var(--main-color);
 }
 .features .feat-box p {
     width: 80%;
@@ -952,11 +962,11 @@ h4,h3, .skill-name {
     width: fit-content;
 }
 .testimonials .testimonials-content {
-  display: flex;
-  justify-content: center;
-  position: relative;
-  z-index: 2;
-  flex-wrap: wrap;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    z-index: 2;
+    flex-wrap: wrap;
 }
 .testimonials .ts-box {
     background-color: rgb(var(--main-background-color));
@@ -1004,7 +1014,7 @@ h4,h3, .skill-name {
     top: 0;
     width: 100%;
     height: 100%;
-    transition: 0.7s
+    transition: 0.7s;
 }
 .contact .background-photo {
     background-image: url("../Images/map3.avif");
@@ -1012,7 +1022,7 @@ h4,h3, .skill-name {
     background-size: cover;
 }
 .contact .overlay {
-    background-color: rgba(255, 255, 255, .2);
+    background-color: rgba(255, 255, 255, 0.2);
 }
 .contact .container {
     position: relative;
@@ -1036,19 +1046,19 @@ h4,h3, .skill-name {
 }
 @media screen and (max-width: 768px) {
     .contact .section-title h2 {
-        font-size:52px;
+        font-size: 52px;
         left: 60px;
     }
     .contact .container form {
-      background-color: rgba(var(--main-background-color), 0.8) ;
-      position: relative;
-      top: 0;
-      left: 40%;
-      transform: translateX(-50%);
-      padding: 30px 50px;
-      border-radius: 0 100% 40% 0;
-      width: 70vw;
-      border: 2px solid #0006;
+        background-color: rgba(var(--main-background-color), 0.8);
+        position: relative;
+        top: 0;
+        left: 40%;
+        transform: translateX(-50%);
+        padding: 30px 50px;
+        border-radius: 0 100% 40% 0;
+        width: 70vw;
+        border: 2px solid #0006;
     }
 }
 .contact .container form > p {
@@ -1059,14 +1069,14 @@ h4,h3, .skill-name {
 }
 @media screen and (max-width: 768px) {
     .contact .container form > p {
-       margin-top: 60px;
+        margin-top: 60px;
     }
 }
 .contact .container form > input,
 .contact .container form > textarea {
     outline: none;
     border: none;
-    border-width: 2px ;
+    border-width: 2px;
     border-style: solid;
     border-color: transparent transparent #3e403f transparent;
     padding: 8px 0;
@@ -1090,13 +1100,13 @@ h4,h3, .skill-name {
 }
 .contact .container form > input:hover,
 .contact .container form > textarea:hover {
-  border-bottom-color: #000;
+    border-bottom-color: #000;
 }
 .contact .container form > input:focus,
 .contact .container form > textarea:focus {
-  border-bottom-color:  #f4f4f4;
-  padding-left: 10px;
-  font-weight: bold;
+    border-bottom-color: #f4f4f4;
+    padding-left: 10px;
+    font-weight: bold;
 }
 .contact .container form div p {
     margin: 20px 0 10px;
@@ -1149,14 +1159,14 @@ h4,h3, .skill-name {
     cursor: pointer;
 }
 @media screen and (max-width: 768px) {
-  .contact .container form input[type="submit"] {
-    width: 200px;
-    border-radius: 4px;
-  }
+    .contact .container form input[type="submit"] {
+        width: 200px;
+        border-radius: 4px;
+    }
 }
 .contact .container form input[type="submit"]:hover {
-    background-color : rgba(0, 0, 0, 0.07);
-    color: var(--text-color)
+    background-color: rgba(0, 0, 0, 0.07);
+    color: var(--text-color);
 }
 /* End Contact Us */
 /* Start Footer */
@@ -1171,9 +1181,9 @@ h4,h3, .skill-name {
     flex-wrap: wrap;
 }
 .footer .social-media {
-  width: 300px;
+    width: 300px;
 }
-.footer .social-media .logo{
+.footer .social-media .logo {
     font-family: "Mochiy Pop One", sans-serif;
     font-size: 34px;
     margin-left: -20px;
@@ -1193,10 +1203,10 @@ h4,h3, .skill-name {
 }
 @media screen and (max-width: 768px) {
     .footer .social-media {
-      text-align: center;
+        text-align: center;
     }
     .footer .social-media .icons {
-      width: auto;
+        width: auto;
     }
 }
 .footer .social-media .icons i {
@@ -1237,7 +1247,7 @@ h4,h3, .skill-name {
 .footer .container ul li a {
     text-decoration: none;
 }
-.footer .container>p {
+.footer .container > p {
     width: 100%;
     text-align: center;
     color: var(--header-color);
@@ -1245,7 +1255,7 @@ h4,h3, .skill-name {
     margin-top: 60px;
     position: relative;
 }
-.footer .container>p::before {
+.footer .container > p::before {
     content: "";
     width: 100%;
     height: 1px;
@@ -1254,7 +1264,7 @@ h4,h3, .skill-name {
     top: -25px;
     left: 0;
 }
-.footer .container>p span {
-  color: #b40c45;
+.footer .container > p span {
+    color: #b40c45;
 }
 /* End Footer */

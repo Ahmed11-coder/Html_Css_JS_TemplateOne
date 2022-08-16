@@ -1,13 +1,12 @@
-
 // Start Global Functions
 // Handle Acitve State
 function handleActive(ev) {
-  // Remove Active Class From All Childrans
-  ev.target.parentElement
-      .querySelectorAll(".active")
-      .forEach((el) => el.classList.remove("active"));
-  // Add Active Class On Self
-  ev.target.classList.add("active");
+    // Remove Active Class From All Childrans
+    ev.target.parentElement
+        .querySelectorAll(".active")
+        .forEach((el) => el.classList.remove("active"));
+    // Add Active Class On Self
+    ev.target.classList.add("active");
 }
 // End Global Functions
 
@@ -74,12 +73,15 @@ document
     .forEach((ele) => ele.classList.remove("active"));
 
 // Check If Random Background Local Storage Is Not Empty
-if (backgroundLocalItem == "true" || localStorage.getItem("background_option") === null) {
-  backgroundOption = true;
-  document.querySelector(".random-background .yes").classList.add("active")
+if (
+    backgroundLocalItem == "true" ||
+    localStorage.getItem("background_option") === null
+) {
+    backgroundOption = true;
+    document.querySelector(".random-background .yes").classList.add("active");
 } else {
-  backgroundOption = false;
-  document.querySelector(".random-background .no").classList.add("active");
+    backgroundOption = false;
+    document.querySelector(".random-background .no").classList.add("active");
 }
 
 let colorOption = Array.from(document.querySelectorAll(`.color-default span`));
@@ -199,19 +201,21 @@ randomizeImgs();
 // Start Show Bullets Option
 
 // Select All Bullets
-const allBullets = Array.from(document.querySelectorAll(".nav-bullets .bullet"));
+const allBullets = Array.from(
+    document.querySelectorAll(".nav-bullets .bullet")
+);
 // Select All Links
 const allLinks = Array.from(document.querySelectorAll(".links a"));
 
 function scrollTo(elements) {
-  elements.forEach(element => {
-    element.addEventListener("click", (e)=> {
-      e.preventDefault();
-      document.querySelector(e.target.dataset.section).scrollIntoView({
-        behavior: "smooth"
-      });
-    })
-  })
+    elements.forEach((element) => {
+        element.addEventListener("click", (e) => {
+            e.preventDefault();
+            document.querySelector(e.target.dataset.section).scrollIntoView({
+                behavior: "smooth",
+            });
+        });
+    });
 }
 
 scrollTo(allBullets);
@@ -222,137 +226,171 @@ let bulletsContainer = document.querySelector(".nav-bullets");
 let bulletsLocalItem = localStorage.getItem("bullets_option");
 
 if (bulletsLocalItem) {
-  bulletsSpan.forEach(span => {
-    span.classList.remove("active");
-  })
-  if (bulletsLocalItem === "block") {
-    bulletsContainer.style.display = "block";
-    document.querySelector(".bullets-option .yes").classList.add("active");
-  } else {
-    bulletsContainer.style.display = "none";
-    document.querySelector(".bullets-option .no").classList.add("active")
-  }
+    bulletsSpan.forEach((span) => {
+        span.classList.remove("active");
+    });
+    if (bulletsLocalItem === "block") {
+        bulletsContainer.style.display = "block";
+        document.querySelector(".bullets-option .yes").classList.add("active");
+    } else {
+        bulletsContainer.style.display = "none";
+        document.querySelector(".bullets-option .no").classList.add("active");
+    }
 }
 
-bulletsSpan.forEach(span => {
-  span.addEventListener("click", (ev) => {
-    if (span.dataset.display === "show") {
-      bulletsContainer.style.display = "block";
-      localStorage.setItem("bullets_option", "block");
-    } else {
-      bulletsContainer.style.display = "none";
-      localStorage.setItem("bullets_option", "none");
-    }
-    handleActive(ev);
-  })
-})
+bulletsSpan.forEach((span) => {
+    span.addEventListener("click", (ev) => {
+        if (span.dataset.display === "show") {
+            bulletsContainer.style.display = "block";
+            localStorage.setItem("bullets_option", "block");
+        } else {
+            bulletsContainer.style.display = "none";
+            localStorage.setItem("bullets_option", "none");
+        }
+        handleActive(ev);
+    });
+});
 // End Show Bullets Option
 
 function Dark_Light(mode) {
-  let docStyle = document.documentElement.style;
-  if (mode == "dark") {
-    imgsArray = [
-        "01dark.avif",
-        "02dark.avif",
-        "03dark.avif",
-        "04dark.avif",
-        "05dark.avif",
-        "06dark.avif",
-    ];
-    document.querySelectorAll("div > p:not(.about, .introduction p, .year p, form div p)").forEach(text => text.style.color = "#a5a5a5");
-    document.querySelectorAll(".skills-boxs .skill-box").forEach(box=> {
-      box.style.cssText = "background-color: #fff1; border-color: #fff4";
-      box.querySelector(".skill-progress").style.backgroundColor = "#2228";
-    })
-    document.querySelectorAll(".gallery .images-box img").forEach(img=> {
-      img.style.boxShadow = "3px 3px 10px -1px #222a, -3px 3px 10px -1px #222a";
-      img.src = `Images/gallery0${img.alt.split(" ")[1]}dark.avif`;
-    })
-    document.querySelectorAll(".feat-box i").forEach(i=> i.style.boxShadow = "10px 10px 30px -2px var(--main-color),-10px -10px 30px -2px #444");
-    document.querySelector(".contact .background-photo").style.backgroundImage = `url("Images/map3dark.avif")`;
-    document.querySelector(".contact .overlay").style.backgroundColor = `rgba(0,0,0,0.2)`;
-    docStyle.setProperty("--main-background-color", "19, 19, 19");
-    docStyle.setProperty("--second-background-color", "#181818");
-    docStyle.setProperty("--title-color", "#cecece");
-    docStyle.setProperty("--border-color", "#222");
-    docStyle.setProperty("--timeline-color", "#a5a5a5");
-    docStyle.setProperty("--header-color", "#cecece");
-  } else {
-    document.querySelectorAll(".skills-boxs .skill-box").forEach(box=> {
-      box.style.cssText = "background-color: #fdfdfd88; border-color: #fff";
-      box.querySelector(".skill-progress").style.backgroundColor = "#fdfdfd88";
-    })
-    imgsArray = [
-        "01.avif",
-        "02.avif",
-        "03.avif",
-        "04.avif",
-        "05.avif",
-        "06.avif",
-    ];
-    document.querySelectorAll(".gallery .images-box img").forEach(img=> {
-      img.style.boxShadow = "3px 3px 10px -1px #666a, -3px 3px 10px -1px #666a";
-      img.src = `Images/gallery0${img.alt.split(" ")[1]}.avif`;
-    })
-    document.querySelectorAll("div > p:not(.about, .introduction p, .year p, form div p)").forEach(text => text.style.color = "");
-    document.querySelectorAll(".feat-box i").forEach(i=> i.style.boxShadow = "10px 10px 30px -1px var(--main-color),-10px -10px 30px -1px #ddd");
-    document.querySelector(".contact .background-photo").style.cssText = `background-image: url(Images/map3.avif");`;
-    document.querySelector(".contact .overlay").style.backgroundColor = `rgba(255,255,255,0.2)`;
-    docStyle.setProperty("--main-background-color", "255, 255, 255");
-    docStyle.setProperty("--second-background-color", "#f7f7f7");
-    docStyle.setProperty("--title-color", "#000");
-    docStyle.setProperty("--border-color", "#d4d4d4");
-    docStyle.setProperty("--timeline-color", "var(--main-color)");
-    docStyle.setProperty("--header-color", "#333");
-  }
+    let docStyle = document.documentElement.style;
+    if (mode == "dark") {
+        imgsArray = [
+            "01dark.avif",
+            "02dark.avif",
+            "03dark.avif",
+            "04dark.avif",
+            "05dark.avif",
+            "06dark.avif",
+        ];
+        document
+            .querySelectorAll(
+                "div > p:not(.about, .introduction p, .year p, form div p)"
+            )
+            .forEach((text) => (text.style.color = "#a5a5a5"));
+        document.querySelectorAll(".skills-boxs .skill-box").forEach((box) => {
+            box.style.cssText = "background-color: #fff1; border-color: #fff4";
+            box.querySelector(".skill-progress").style.backgroundColor =
+                "#2228";
+        });
+        document.querySelectorAll(".gallery .images-box img").forEach((img) => {
+            img.style.boxShadow =
+                "3px 3px 10px -1px #222a, -3px 3px 10px -1px #222a";
+            img.src = `Images/gallery0${img.alt.split(" ")[1]}dark.avif`;
+        });
+        document
+            .querySelectorAll(".feat-box i")
+            .forEach(
+                (i) =>
+                    (i.style.boxShadow =
+                        "10px 10px 30px -2px var(--main-color),-10px -10px 30px -2px #444")
+            );
+        document.querySelector(
+            ".contact .background-photo"
+        ).style.backgroundImage = `url("Images/map3dark.avif")`;
+        document.querySelector(
+            ".contact .overlay"
+        ).style.backgroundColor = `rgba(0,0,0,0.2)`;
+        docStyle.setProperty("--main-background-color", "19, 19, 19");
+        docStyle.setProperty("--second-background-color", "#181818");
+        docStyle.setProperty("--title-color", "#cecece");
+        docStyle.setProperty("--border-color", "#222");
+        docStyle.setProperty("--timeline-color", "#a5a5a5");
+        docStyle.setProperty("--header-color", "#cecece");
+    } else {
+        document.querySelectorAll(".skills-boxs .skill-box").forEach((box) => {
+            box.style.cssText =
+                "background-color: #fdfdfd88; border-color: #fff";
+            box.querySelector(".skill-progress").style.backgroundColor =
+                "#fdfdfd88";
+        });
+        imgsArray = [
+            "01.avif",
+            "02.avif",
+            "03.avif",
+            "04.avif",
+            "05.avif",
+            "06.avif",
+        ];
+        document.querySelectorAll(".gallery .images-box img").forEach((img) => {
+            img.style.boxShadow =
+                "3px 3px 10px -1px #666a, -3px 3px 10px -1px #666a";
+            img.src = `Images/gallery0${img.alt.split(" ")[1]}.avif`;
+        });
+        document
+            .querySelectorAll(
+                "div > p:not(.about, .introduction p, .year p, form div p)"
+            )
+            .forEach((text) => (text.style.color = ""));
+        document
+            .querySelectorAll(".feat-box i")
+            .forEach(
+                (i) =>
+                    (i.style.boxShadow =
+                        "10px 10px 30px -1px var(--main-color),-10px -10px 30px -1px #ddd")
+            );
+        document.querySelector(
+            ".contact .background-photo"
+        ).style.cssText = `background-image: url(Images/map3.avif");`;
+        document.querySelector(
+            ".contact .overlay"
+        ).style.backgroundColor = `rgba(255,255,255,0.2)`;
+        docStyle.setProperty("--main-background-color", "255, 255, 255");
+        docStyle.setProperty("--second-background-color", "#f7f7f7");
+        docStyle.setProperty("--title-color", "#000");
+        docStyle.setProperty("--border-color", "#d4d4d4");
+        docStyle.setProperty("--timeline-color", "var(--main-color)");
+        docStyle.setProperty("--header-color", "#333");
+    }
 }
-
 
 // Start Mode Option
 let modes = Array.from(document.querySelectorAll(".mode-option span"));
 let modesLocalItem = localStorage.getItem("mode_option");
 
 if (modesLocalItem) {
-  modes.forEach(mode => {
-    mode.classList.remove("active");
-  })
-  if (modesLocalItem === "Dark_Mode") {
-    Dark_Light("dark");
-    document.querySelector(".mode-option .dark-mode").classList.add("active");
-  } else {
-    Dark_Light("light");
-    document.querySelector(".mode-option .light-mode").classList.add("active")
-  }
+    modes.forEach((mode) => {
+        mode.classList.remove("active");
+    });
+    if (modesLocalItem === "Dark_Mode") {
+        Dark_Light("dark");
+        document
+            .querySelector(".mode-option .dark-mode")
+            .classList.add("active");
+    } else {
+        Dark_Light("light");
+        document
+            .querySelector(".mode-option .light-mode")
+            .classList.add("active");
+    }
 }
 
-modes.forEach(mode => {
-  mode.addEventListener("click", ev => {
-
-    if (ev.target.dataset.mode === "dark") {
-      Dark_Light("dark");
-      localStorage.setItem("mode_option", "Dark_Mode");
-    }
-    else {
-      Dark_Light("light");
-      localStorage.setItem("mode_option", "Light_Mode");
-    }
-    handleActive(ev);
-  })
-})
+modes.forEach((mode) => {
+    mode.addEventListener("click", (ev) => {
+        if (ev.target.dataset.mode === "dark") {
+            Dark_Light("dark");
+            localStorage.setItem("mode_option", "Dark_Mode");
+        } else {
+            Dark_Light("light");
+            localStorage.setItem("mode_option", "Light_Mode");
+        }
+        handleActive(ev);
+    });
+});
 // End Mode Option
 // Start Reset Button
 document.querySelector(".reset-options").onclick = function () {
-  localStorage.clear();
+    localStorage.clear();
 
-  // More Mothods
-  /* localStorage.removeItem("bullets_option");
+    // More Mothods
+    /* localStorage.removeItem("bullets_option");
   localStorage.removeItem("color_option");
   localStorage.removeItem("mode_option");
   localStorage.removeItem("background_option"); */
 
-  // Reload Window
-  window.location.reload();
-}
+    // Reload Window
+    window.location.reload();
+};
 // End Reset Button
 
 // End Settings Box
@@ -385,7 +423,9 @@ window.onscroll = function () {
     let allSkills = document.querySelectorAll(
         ".skill-box .skill-progress span"
     );
-    let contactBackground = document.querySelector(".contact .background-photo");
+    let contactBackground = document.querySelector(
+        ".contact .background-photo"
+    );
 
     allSkills.forEach(
         (skill) =>
@@ -395,7 +435,11 @@ window.onscroll = function () {
                     ? skill.dataset.progress
                     : 0)
     );
-    contactBackground.style.transform = windowScrollTop > (contactOffsetTop - 200) + contactsOuterHeight - windowHeight ? "scale(1)": "scale(3)";
+    contactBackground.style.transform =
+        windowScrollTop >
+        contactOffsetTop - 200 + contactsOuterHeight - windowHeight
+            ? "scale(1)"
+            : "scale(3)";
 };
 // End Our Skills and Contact Us
 

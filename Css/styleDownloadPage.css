@@ -8,9 +8,9 @@ body {
     padding-right: 15px;
 }
 @media screen and (min-width: 576px) {
-  .container {
-    max-width: 540px;
-  }
+    .container {
+        max-width: 540px;
+    }
 }
 /* Small Screen  */
 @media screen and (min-width: 768px) {
@@ -47,17 +47,17 @@ body {
     transition: 0.2s;
     cursor: pointer;
 }
-.container .imgs-content .img-box > img  {
+.container .imgs-content .img-box > img {
     border-radius: 6px;
     width: 100%;
     transition: 0.2s;
 }
 @media screen and (max-width: 768px) {
     .container .imgs-content {
-    	justify-content: center;
+        justify-content: center;
     }
     .container .imgs-content .img-box {
-    	width: calc(100% - 50px);
+        width: calc(100% - 50px);
     }
 }
 .container .imgs-content .img-box .overlay-img {
@@ -139,11 +139,11 @@ body {
 }
 @media screen and (max-width: 768px) {
     .popup-box .info-box {
-    	justify-content: center;
+        justify-content: center;
     }
     .popup-box .info-box p {
-    	margin: 0px 10px;
-    	width: fit-content;
+        margin: 0px 10px;
+        width: fit-content;
     }
 }
 .popup-box img {
@@ -185,6 +185,6 @@ body {
 }
 @media screen and (max-width: 768px) {
     .popup-box .popup-header #logo {
-	width: 25%;
+        width: 25%;
     }
 }
